@@ -1,19 +1,41 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {createAppContainer} from 'react-navigation'
+import {Dimensions} from 'react-native'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import {Feather, FontAwesome5, Entypo} from "@expo/vector-icons";
+import {OrcamentosScreen, CartoesScreen,CrediarioScreen,ComprasScreen,ContasScreen,RecorrentesScreen, PagamentosScreen} from "./screens";
+import SideBar from "./components/SideBar";
+import Compras from './screens/compras';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+const Drawer  = createDrawerNavigator();
+
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+ <Drawer.Navigator
+    initialRouteName="Home"
+    screenOptions={{ gestureEnabled: false }}
+  >
+    <Drawer.Screen
+      name="Home"
+      component={OrcamentosScreen}
+      options={{ title: 'Main Page' }}
+    />
+    <Drawer.Screen
+      name="Profile"
+      component={ComprasScreen}
+      options={{ title: 'Earth Quakes' }}
+
+    />
+  </Drawer.Navigator>
+    </NavigationContainer>
+   
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
+export default App;
