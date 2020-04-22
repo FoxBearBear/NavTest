@@ -24,7 +24,7 @@ export default function EarthQuakes(props){
             return () => {
                 isActive = false;
             };
-        }, []),,
+        }, []),
     );
 
 

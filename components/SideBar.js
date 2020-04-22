@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, ImageBackground, Image} from 'react-native'
-import { DrawerNavigatorItems } from '@react-navigation/drawer';
 
 import {Ionicons} from "@expo/vector-icons";
 
@@ -11,17 +10,13 @@ export default Sidebar = props => (
             style={{width: undefined,  padding: 16, paddingTop: 48}}
         >
             <Image source={require('../assets/profile-pic.jpeg')} style={styles.profile} />
-            <Text style={styles.name}>Victor Soares</Text>
+            <Text style={styles.name}>Fox Bear Bear</Text>
 
             <View style={{flexDirection:"row"}}>
-                <Text style={styles.followers}> R$ 2140,00</Text>
+                <Text style={styles.followers}> WorldWide Earthquake Tracker</Text>
                 <Ionicons name="md-cash" size={16} color='rgba(255, 255, 255, 0.8)'/>
             </View>
         </ImageBackground>
-
-        <View style={styles.container}>
-            <DrawerNavigatorItems {...props}/>
-        </View>
 
     </ScrollView>
 )
